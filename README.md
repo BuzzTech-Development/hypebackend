@@ -1,2 +1,2 @@
 # HYPE Backend
-Backend for the HYPE project writtien in Django.
+Backend for the HYPE project written in Django.
