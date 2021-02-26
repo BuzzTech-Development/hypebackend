@@ -1,2 +1,5 @@
 # HYPE Backend
-Backend for the HYPE (Hope for Youth) project written in Django.
+
+RESTful API for the HYPE (Hope for Youth) project.
+
+- Written in Python using Django.
