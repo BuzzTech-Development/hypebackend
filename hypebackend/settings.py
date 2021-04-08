@@ -120,7 +120,7 @@ REST_FRAMEWORK = {
 # CORS whitelist
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000',
+    'https://localhost:3000',
 )
 
 
