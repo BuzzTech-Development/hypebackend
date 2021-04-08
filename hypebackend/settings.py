@@ -103,6 +103,26 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# REST framework settings
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
+
+
+# CORS whitelist
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
