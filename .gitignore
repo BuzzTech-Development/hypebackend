@@ -21,3 +21,4 @@ tests/report/
 *.sqlite3
 venv
 .vscode
+hypeapi/migrations/
