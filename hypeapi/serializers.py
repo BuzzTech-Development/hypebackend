@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-from .models import Profile, Assignment
+from .models import Profile, Assignment, Meeting
 
 
 class ProfileSerializer(serializers.ModelSerializer):
@@ -17,10 +17,16 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'date_joined', 'profile')
+        fields = ('username', 'first_name', 'last_name', 'email', 'date_joined', 'profile',)
 
 
-class AssignmentSerializer(serializers.HyperlinkedModelSerializer):
+class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assignment
-        fields = ('name', 'grade')
+        fields = ('name', 'grade',)
+
+
+class MeetingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Meeting
+        fields = ('name', 'cohort', 'date', 'start_time', 'end_time', 'link',)
