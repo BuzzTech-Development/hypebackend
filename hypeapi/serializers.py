@@ -29,4 +29,4 @@ class AssignmentSerializer(serializers.ModelSerializer):
 class MeetingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meeting
-        fields = ('name', 'cohort', 'date', 'start_time', 'end_time', 'link',)
+        fields = ('id', 'name', 'cohort', 'date', 'start_time', 'end_time', 'link',)
