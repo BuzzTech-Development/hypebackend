@@ -41,7 +41,7 @@ class Assignment(models.Model):
     grade = models.FloatField()
 
     def __str__(self):
-        return self.name
+            return self.name
 
 
 class Meeting(models.Model):
