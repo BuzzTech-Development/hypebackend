@@ -23,7 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
 class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assignment
-        fields = ('name', 'grade',)
+        fields = ('name', 'date', 'description', 'files', 'points', 'selectedBadge', 'time', 'grade',)
 
 
 class MeetingSerializer(serializers.ModelSerializer):
