@@ -30,9 +30,14 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} profile'
 
-
 class Assignment(models.Model):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=30)
+    date = models.DateField(max_length=30)
+    description = models.CharField(max_length=1000)
+    files = models.CharField(max_length=500)
+    points = models.IntegerField()
+    selectedBadge = models.IntegerField()
+    time = models.TimeField(max_length=30)
     grade = models.FloatField()
 
     def __str__(self):
