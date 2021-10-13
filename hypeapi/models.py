@@ -33,11 +33,11 @@ class Profile(models.Model):
 class Assignment(models.Model):
     name = models.CharField(max_length=30)
     date = models.DateField(max_length=30)
+    time = models.TimeField(max_length=30)
     description = models.CharField(max_length=1000)
-    files = models.CharField(max_length=500)
     points = models.IntegerField()
     selectedBadge = models.IntegerField()
-    time = models.TimeField(max_length=30)
+    graded = models.BooleanField()
     grade = models.FloatField()
 
     def __str__(self):
