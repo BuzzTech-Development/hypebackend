@@ -11,7 +11,8 @@ class Cohort(models.Model):
 
 class Profile(models.Model):
     """A profile to be associated with a single user containing extra role information"""
-    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, related_name='profile', on_delete=models.CASCADE)
 
     user_roles = [
         ('ADMIN', 'Admin'),
@@ -30,6 +31,7 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} profile'
 
+
 class Assignment(models.Model):
     name = models.CharField(max_length=30)
     date = models.DateField(max_length=30)
@@ -39,6 +41,7 @@ class Assignment(models.Model):
     selectedBadge = models.IntegerField()
     graded = models.BooleanField()
     grade = models.FloatField()
+    file = models.FileField()
 
     def __str__(self):
         return self.name
@@ -46,7 +49,8 @@ class Assignment(models.Model):
 
 class Meeting(models.Model):
     name = models.CharField(max_length=50)
-    cohort = models.ForeignKey(Cohort, related_name='cohort', on_delete=models.CASCADE)
+    cohort = models.ForeignKey(
+        Cohort, related_name='cohort', on_delete=models.CASCADE)
     date = models.DateField()
     start_time = models.TimeField()
     end_time = models.TimeField()
