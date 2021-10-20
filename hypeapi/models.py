@@ -34,13 +34,14 @@ class Profile(models.Model):
 
 class Assignment(models.Model):
     name = models.CharField(max_length=30)
-    date = models.DateField(max_length=30)
-    time = models.TimeField(max_length=30)
+    creationDateTime = models.DateTimeField()
     description = models.CharField(max_length=1000)
     points = models.IntegerField()
-    selectedBadge = models.IntegerField()
+    badge = models.IntegerField(blank=True, default=0)
+    dueDateTime = models.DateTimeField()
     graded = models.BooleanField()
-    grade = models.FloatField()
+    grade = models.FloatField(null=True)
+    numFiles = models.IntegerField()
     file = models.FileField()
 
     def __str__(self):

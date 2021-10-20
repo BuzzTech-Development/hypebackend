@@ -17,16 +17,19 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'date_joined', 'profile',)
+        fields = ('username', 'first_name', 'last_name',
+                  'email', 'date_joined', 'profile',)
 
 
 class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assignment
-        fields = ('name', 'date', 'time', 'description', 'points', 'selectedBadge', 'graded', 'grade',)
+        fields = ('name', 'creationDateTime', 'description', 'points',
+                  'badge', 'dueDateTime' 'graded', 'grade', 'numFiles', 'file')
 
 
 class MeetingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meeting
-        fields = ('id', 'name', 'cohort', 'date', 'start_time', 'end_time', 'link',)
+        fields = ('id', 'name', 'cohort', 'date',
+                  'start_time', 'end_time', 'link',)
