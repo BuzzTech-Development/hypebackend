@@ -6,9 +6,12 @@ from .cohort import Cohort
 
 class Profile(models.Model):
     """A profile to be associated with a single user containing extra role information"""
-    user = models.OneToOneField(
-        User, related_name='profile', on_delete=models.CASCADE)
 
+    user = models.OneToOneField(
+        User,
+        related_name='profile',
+        on_delete=models.CASCADE
+    )
     user_roles = [
         ('ADMIN', 'Admin'),
         ('INSTRUCTOR', 'Instructor'),
@@ -20,7 +23,6 @@ class Profile(models.Model):
         choices=user_roles,
         default='STUDENT'
     )
-
     cohorts = models.ManyToManyField(Cohort)
 
     def __str__(self):
