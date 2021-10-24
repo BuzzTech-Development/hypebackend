@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from views import AssignmentViewSet, MeetingViewSet, UserViewSet
+from .views import AssignmentViewSet, MeetingViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'assignments', AssignmentViewSet)

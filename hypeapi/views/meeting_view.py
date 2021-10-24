@@ -1,8 +1,8 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 
-from models import Meeting
-from serializers import MeetingSerializer
+from ..models import Meeting
+from ..serializers import MeetingSerializer
 
 
 class MeetingViewSet(viewsets.ModelViewSet):

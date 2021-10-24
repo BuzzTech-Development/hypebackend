@@ -2,7 +2,7 @@ from rest_framework import viewsets, mixins
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 
-from serializers import UserSerializer
+from ..serializers import UserSerializer
 
 
 class UserViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
