@@ -10,7 +10,6 @@ class MeetingSerializer(serializers.ModelSerializer):
             'cohort',
             'date',
             'end_time',
-            'id',
             'link',
             'name',
             'start_time'

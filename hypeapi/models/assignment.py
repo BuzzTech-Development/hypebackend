@@ -8,7 +8,6 @@ class Assignment(models.Model):
     dueDateTime = models.DateTimeField(default='2021-1-1 12:00')
     grade = models.FloatField(default=0.0, null=True)
     graded = models.BooleanField(default=False)
-    id = models.IntegerField(default=-1, primary_key=True)
     name = models.CharField(default='', max_length=30)
     numFiles = models.IntegerField(default=1)
     points = models.IntegerField(default=0)

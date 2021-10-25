@@ -11,7 +11,6 @@ class Meeting(models.Model):
     )
     date = models.DateField()
     end_time = models.TimeField()
-    id = models.IntegerField(default=-1, primary_key=True)
     link = models.TextField()
     name = models.CharField(max_length=50)
     start_time = models.TimeField()
