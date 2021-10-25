@@ -10,11 +10,10 @@ class MeetingViewSet(viewsets.ModelViewSet):
     serializer_class = MeetingSerializer
 
     def list(self, request, *args, **kwargs):
-        print(request.query_params)
         cohort = request.query_params.get('cohort', None)
         if not cohort:
             return Response(
-                {'status': 'Required parameter cohort not provide'},
+                {'status': 'Required parameter cohort not provided'},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
