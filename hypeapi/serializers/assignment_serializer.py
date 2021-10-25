@@ -8,13 +8,10 @@ class AssignmentSerializer(serializers.ModelSerializer):
         model = Assignment
         fields = (
             'badge',
-            'creationDateTime',
+            'creation_date_time',
             'description',
-            'dueDateTime',
-            'grade',
-            'graded',
+            'due_date_time',
             'name',
-            'numFiles',
-            'points',
-            'undated'
+            'num_files',
+            'points'
         )
