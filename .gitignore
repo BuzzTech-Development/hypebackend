@@ -22,3 +22,4 @@ tests/report/
 venv
 .vscode
 hypeapi/migrations/
+.env

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Cohort, Profile, Assignment, Meeting
+from .models import Assignment, Cohort, Meeting, Profile
 
-admin.site.register(Cohort)
-admin.site.register(Profile)
 admin.site.register(Assignment)
+admin.site.register(Cohort)
 admin.site.register(Meeting)
+admin.site.register(Profile)
