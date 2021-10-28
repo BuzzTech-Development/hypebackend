@@ -10,13 +10,6 @@ class AssignmentViewSet(viewsets.ModelViewSet):
     serializer_class = AssignmentSerializer
 
     def list(self, request, *args, **kwargs):
-        cohort = request.query_params.get('cohort', None)
-        if not cohort:
-            return Response(
-                {'status': 'Required parameter cohort not provided'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        queryset = self.queryset.filter(cohort=cohort)
+        queryset = Assignment.objects.all()
         serializer = AssignmentSerializer(queryset, many=True)
         return Response(serializer.data)
