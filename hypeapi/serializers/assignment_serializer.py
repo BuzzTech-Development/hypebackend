@@ -9,10 +9,10 @@ class AssignmentSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'badge',
-            'creationDate',
+            'creation_date',
             'description',
-            'dueDate',
+            'due_date',
             'name',
-            'numFiles',
+            'num_files',
             'points'
         )
