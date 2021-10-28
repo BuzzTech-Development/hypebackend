@@ -10,6 +10,11 @@ class UserViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     serializer_class = UserSerializer
 
     def list(self, request, *args, **kwargs):
+        queryset = User.objects.all()
+        serializer = UserSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def retrieve(self, request, *args, **kwargs):
         user = self.request.user
         serializer = UserSerializer(user)
         return Response(serializer.data)

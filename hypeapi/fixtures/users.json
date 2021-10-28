@@ -1,0 +1,303 @@
+[
+    {
+    "model": "hypeapi.cohort",
+    "pk": 1,
+    "fields": {
+        "name": "Cohort1"
+    }
+    },
+    {
+    "model": "hypeapi.cohort",
+    "pk": 2,
+    "fields": {
+        "name": "Cohort2"
+    }
+    },
+    {
+    "model": "hypeapi.cohort",
+    "pk": 3,
+    "fields": {
+        "name": "Cohort3"
+    }
+    },
+    {
+      "model": "auth.user",
+      "pk": 1,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$vN9OY95XZqhx$IraOGHTG1M0YwH8cUW6LHjSdfn+BNsaDimCCTVNfAVg=",
+        "last_login": "2021-10-28T17:02:35.500Z",
+        "is_superuser": true,
+        "username": "emmett",
+        "first_name": "",
+        "last_name": "",
+        "email": "emcdow3@gatech.edu",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-10-07T22:45:10.688Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 2,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$eoiUdUjNTRvr$QMgYTNoQrcmuuo6Mc/F6lJL3DsNTul5avCjSnKUmWOo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "User1",
+        "first_name": "Johnathan",
+        "last_name": "Conrad",
+        "email": "conrad@conrad.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:03:44.650Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 3,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$tgnYj5ViSb4h$Vew193J5Csc0XgL89Cr3W0qpmF9sS+GE6y2Xwv+ussE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user2",
+        "first_name": "Claire",
+        "last_name": "Powell",
+        "email": "claire@powell.net",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:35:15.404Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 4,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$8dN97WkiRbK0$AIpqdZ+B0A5ku5uua65eF4iUmfA5FGemagQSK5PJFsM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user3",
+        "first_name": "Isreal",
+        "last_name": "Adesanya",
+        "email": "ufc@mma.org",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:35:43.712Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 5,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$HWAwWxoJhoXa$l6PvuU4aM2bpYrHFcnTpahWswoVnM7kxkE341Kxs3L0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user4",
+        "first_name": "Georges",
+        "last_name": "St. Pierre",
+        "email": "gsp@winner.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:36:02.398Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 6,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$IT36QowpLq8q$OzraVx+pbrok8vtbF4+6kOF6ZFS8NIy9bJVJbI9+hJI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user5",
+        "first_name": "Clark",
+        "last_name": "Kent",
+        "email": "not@superman.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:36:21.673Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 7,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$6ghmMrPebnRK$tjI4xyrB+8PHzCrsv8r79weOXnmT9dGNmOV3f64+0x0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user6",
+        "first_name": "Ken",
+        "last_name": "Bone",
+        "email": "icare@deeply.ru",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:37:21.533Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 8,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$5yNjYxkccf6y$v9tlMl0laR1dfQXsGXFI30QqVi6hnvhXhoessBl9hU8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user7",
+        "first_name": "Jake",
+        "last_name": "Fromstatefarm",
+        "email": "user@progressive.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:37:41.965Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 9,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$s5KD4XQnwpM2$oUtkLiOKhzedqtmVldz8XqaewbaW4iEb0Xg30qCQ0Wc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user8",
+        "first_name": "Blake",
+        "last_name": "Bortles",
+        "email": "is@the.greatest",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:37:55.540Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 10,
+      "fields": {
+        "password": "pbkdf2_sha256$180000$9V25TzmVPUfz$zg0SateFWDAOp0MSw3yCbf+116YY6Hj4TSMu71tQ1Cs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user9",
+        "first_name": "Max",
+        "last_name": "Fried",
+        "email": "goated@braves.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-10-28T17:38:37.818Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 1,
+        "fields": {
+        "user": 2,
+        "role": "STUDENT",
+        "cohorts": [
+            1
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 2,
+        "fields": {
+        "user": 3,
+        "role": "STUDENT",
+        "cohorts": [
+            1
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 3,
+        "fields": {
+        "user": 4,
+        "role": "STUDENT",
+        "cohorts": [
+            2
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 4,
+        "fields": {
+        "user": 5,
+        "role": "STUDENT",
+        "cohorts": [
+            2
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 5,
+        "fields": {
+        "user": 6,
+        "role": "STUDENT",
+        "cohorts": [
+            2
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 6,
+        "fields": {
+        "user": 7,
+        "role": "STUDENT",
+        "cohorts": [
+            2
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 7,
+        "fields": {
+        "user": 8,
+        "role": "STUDENT",
+        "cohorts": [
+            3
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 8,
+        "fields": {
+        "user": 9,
+        "role": "STUDENT",
+        "cohorts": [
+            3
+        ]
+        }
+    },
+    {
+        "model": "hypeapi.profile",
+        "pk": 9,
+        "fields": {
+        "user": 10,
+        "role": "STUDENT",
+        "cohorts": [
+            3
+        ]
+        }
+    }
+        
+    ]
