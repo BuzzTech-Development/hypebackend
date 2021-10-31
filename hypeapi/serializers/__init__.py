@@ -2,4 +2,5 @@ from .assignment_serializer import AssignmentSerializer
 from .meeting_serializer import MeetingSerializer
 from .profile_serializer import ProfileSerializer
 from .submission_serializer import SubmissionSerializer
+from .upload_serializer import UploadSerializer
 from .user_serializer import UserSerializer
