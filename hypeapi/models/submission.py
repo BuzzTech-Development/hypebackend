@@ -12,4 +12,4 @@ class Submission(models.Model):
     time = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.name
+        return self.comments
