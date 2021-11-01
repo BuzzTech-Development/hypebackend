@@ -32,3 +32,25 @@ class UserViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
         user = self.request.user
         serializer = UserSerializer(user)
         return Response(serializer.data)
+
+
+    # @action(methods=['put'], detail=True)
+    def update(self, request, pk=None):
+        selected = User.objects.get(pk=pk)
+        if (selected != None): 
+            new_user = request.data
+            print(new_user)
+            # Only changing cohort for now
+            selected.profile.cohorts.set(new_user['profile']['cohorts'])
+            selected.save()
+            return Response(UserSerializer(selected).data)
+        else:
+            return Response("User with id: " + pk + " not found", status=404)
+
+    def destroy(self, request, pk=None):
+        selected = User.objects.get(pk=pk)
+        if (selected != None): 
+            selected.delete()
+            return Response()
+        else:
+            return Response("User with id: " + pk + " not found", status=404)
