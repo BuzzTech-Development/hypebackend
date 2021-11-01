@@ -7,7 +7,7 @@ router = routers.DefaultRouter()
 router.register(r'assignments', AssignmentViewSet)
 router.register(r'meetings', MeetingViewSet)
 router.register(r'user', UserViewSet)
-router.register(r'cohort', CohortViewSet)
+router.register(r'cohorts', CohortViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
