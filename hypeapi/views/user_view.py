@@ -30,6 +30,7 @@ class UserViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     @action(methods=['get'], detail=False, url_path='curr', url_name='curr')
     def curr_user(self, request, *args, **kwargs):
         user = self.request.user
+        
         serializer = UserSerializer(user)
         return Response(serializer.data)
 
@@ -39,10 +40,11 @@ class UserViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
         selected = User.objects.get(pk=pk)
         if (selected != None): 
             new_user = request.data
-            print(new_user)
-            # Only changing cohort for now
-            selected.profile.cohorts.set(new_user['profile']['cohorts'])
-            selected.save()
+            if (UserSerializer(selected).data['profile'] != None):
+                selected.profile.cohorts.set(new_user['profile']['cohorts'])
+            selected.username = new_user['username']
+            selected.set_password(new_user['password'])
+            selected.save();
             return Response(UserSerializer(selected).data)
         else:
             return Response("User with id: " + pk + " not found", status=404)
