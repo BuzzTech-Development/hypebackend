@@ -1,12 +1,15 @@
 from django.db import models
 from django.utils import timezone
 
+from .cohort import Cohort
+
 
 class Assignment(models.Model):
     '''
         Represents an assignment created by an instructor and given to a cohort.
     '''
     badge = models.IntegerField(default=-1)
+    cohorts = models.ManyToManyField(Cohort)
     creation_date = models.DateTimeField(default=timezone.now)
     description = models.CharField(default='', max_length=1000)
     due_date = models.DateTimeField(default=timezone.now)

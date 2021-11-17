@@ -1,11 +1,12 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from .views import AssignmentViewSet, MeetingViewSet, UserViewSet
+from .views import AssignmentViewSet, MeetingViewSet, UploadViewSet, UserViewSet
 
 router = routers.DefaultRouter()
-router.register(r'assignments', AssignmentViewSet)
+router.register(r'assignments', AssignmentViewSet, basename='Assignment')
 router.register(r'meetings', MeetingViewSet)
+router.register(r'submission', UploadViewSet)
 router.register(r'user', UserViewSet)
 
 urlpatterns = [

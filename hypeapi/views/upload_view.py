@@ -5,7 +5,7 @@ from ..models import Upload
 from ..serializers import UploadSerializer
 
 
-class AssignmentViewSet(viewsets.ModelViewSet):
+class UploadViewSet(viewsets.ModelViewSet):
     queryset = Upload.objects.all()
     serializer_class = UploadSerializer
 
