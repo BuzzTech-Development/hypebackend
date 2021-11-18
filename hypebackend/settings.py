@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from decouple import config
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -153,3 +154,9 @@ AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_STORAGE_BUCKET_NAME = 'hype-lms-assignments'
 AWS_S3_REGION_NAME = 'us-east-1'
+
+# Session management
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA' : datetime.timedelta(seconds=20),
+    'JWT_ALLOW_REFRESH' : True
+}
