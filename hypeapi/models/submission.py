@@ -1,15 +1,20 @@
+from django.contrib.auth.models import User
 from django.db import models
-from django.utils import timezone
 
-from . import Assignment, Profile
+from . import Assignment
 
 
 class Submission(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
-    comments = models.CharField(max_length=200, default="")
+    comments = models.CharField(max_length=200, blank=True, default='')
+    graded = models.BooleanField(default=False)
     points = models.IntegerField(default=0)
-    student = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    time = models.DateTimeField(default=timezone.now)
+    time = models.DateTimeField(auto_now_add=True)
+
+    def create(self, request, *args, **kwargs):
+        request.author = request.user
+        return super().create(request, *args, **kwargs)
 
     def __str__(self):
         return self.comments

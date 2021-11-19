@@ -1,4 +1,4 @@
 from .assignment_view import AssignmentViewSet
 from .meeting_view import MeetingViewSet
-from .upload_view import UploadViewSet
+from .submission_view import SubmissionViewSet
 from .user_view import UserViewSet

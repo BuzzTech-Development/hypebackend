@@ -6,10 +6,7 @@ from ..serializers import SubmissionSerializer
 
 
 class SubmissionViewSet(viewsets.ModelViewSet):
-    queryset = Submission.objects.all()
     serializer_class = SubmissionSerializer
 
-    def list(self, request, *args, **kwargs):
-        queryset = Submission.objects.all()
-        serializer = SubmissionSerializer(queryset, many=True)
-        return Response(serializer.data)
+    def get_queryset(self):
+        return Submission.objects.filter(author=self.request.user)

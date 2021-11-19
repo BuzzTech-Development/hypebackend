@@ -15,5 +15,5 @@ class AssignmentViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user_cohorts = self.request.user.profile.cohorts.all()
-        query = (Q(cohorts__id__contains=cohort.id) for cohort in user_cohorts)
-        return Assignment.objects.filter(reduce(operator.or_, query))
+        #query = (Q(cohorts__id__contains=cohort.id) for cohort in user_cohorts)
+        return Assignment.objects.filter(cohort__in=user_cohorts)
