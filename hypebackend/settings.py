@@ -157,6 +157,6 @@ AWS_S3_REGION_NAME = 'us-east-1'
 
 # Session management
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA' : datetime.timedelta(seconds=20),
+    'JWT_EXPIRATION_DELTA' : datetime.timedelta(seconds=604800), # A week in seconds
     'JWT_ALLOW_REFRESH' : True
 }
