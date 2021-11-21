@@ -1,9 +1,10 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from .views import AssignmentViewSet, MeetingViewSet, UserViewSet
+from .views import AnnouncementViewSet, AssignmentViewSet, MeetingViewSet, UserViewSet
 
 router = routers.DefaultRouter()
+router.register(r'announcements', AnnouncementViewSet)
 router.register(r'assignments', AssignmentViewSet)
 router.register(r'meetings', MeetingViewSet)
 router.register(r'user', UserViewSet)
