@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils import timezone
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from . import Announcement
 
 
 class Assignment(models.Model):
@@ -16,3 +19,13 @@ class Assignment(models.Model):
 
     def __str__(self):
         return self.name
+
+
+@receiver(post_save, sender=Assignment)
+def create_announcement(sender, instance, created, **kwargs):
+    if created:
+        Announcement.objects.create(
+            subject=f'New assignment "{instance.name}" created',
+            text=instance.description,
+            cohort=instance.cohort
+        )
