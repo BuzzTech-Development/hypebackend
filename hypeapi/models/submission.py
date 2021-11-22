@@ -12,9 +12,5 @@ class Submission(models.Model):
     points = models.IntegerField(default=0)
     time = models.DateTimeField(auto_now_add=True)
 
-    def create(self, request, *args, **kwargs):
-        request.author = request.user
-        return super().create(request, *args, **kwargs)
-
     def __str__(self):
         return self.comments

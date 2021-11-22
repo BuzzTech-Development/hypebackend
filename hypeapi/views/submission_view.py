@@ -13,7 +13,7 @@ class SubmissionViewSet(viewsets.ModelViewSet):
         data = {key: value for key, value in instance_data.items()}
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
-        instance = serializer.save()
+        instance = serializer.save(author=self.request.user)
 
         if request.FILES:
             files = dict((request.FILES).lists()).get('files', None)
