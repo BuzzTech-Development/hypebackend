@@ -1,3 +1,4 @@
+from .announcement import Announcement
 from .assignment import Assignment
 from .cohort import Cohort
 from .meeting import Meeting

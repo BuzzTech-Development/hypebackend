@@ -3,9 +3,10 @@ from rest_framework import routers
 from rest_framework_jwt.views import verify_jwt_token
 from rest_framework_jwt.views import refresh_jwt_token
 
-from .views import AssignmentViewSet, MeetingViewSet, SubmissionViewSet, UserViewSet
+from .views import AnnouncementViewSet, AssignmentViewSet, MeetingViewSet, SubmissionViewSet, UserViewSet
 
 router = routers.DefaultRouter()
+router.register(r'announcements', AnnouncementViewSet)
 router.register(r'assignments', AssignmentViewSet, basename='Assignment')
 router.register(r'meetings', MeetingViewSet, basename='Meeting')
 router.register(r'submissions', SubmissionViewSet, basename='Submission')

@@ -3,6 +3,7 @@ from rest_framework.response import Response
 
 from ..models import Meeting
 from ..serializers import MeetingSerializer
+from ..utils import get_cohort_from_request
 
 
 class MeetingViewSet(viewsets.ModelViewSet):
@@ -10,12 +11,7 @@ class MeetingViewSet(viewsets.ModelViewSet):
     serializer_class = MeetingSerializer
 
     def list(self, request, *args, **kwargs):
-        cohort = request.query_params.get('cohort', None)
-        if not cohort:
-            return Response(
-                {'status': 'Required parameter cohort not provided'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
+        cohort = get_cohort_from_request(request)
 
         queryset = self.queryset.filter(cohort=cohort)
         serializer = MeetingSerializer(queryset, many=True)

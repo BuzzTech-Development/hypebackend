@@ -22,5 +22,5 @@ tests/report/
 venv
 .vscode
 hypeapi/migrations/
-.env
-.DS_Store
+*.env
+*.DS_Store
