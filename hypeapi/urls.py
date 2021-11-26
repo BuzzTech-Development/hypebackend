@@ -3,13 +3,13 @@ from rest_framework import routers
 from rest_framework_jwt.views import verify_jwt_token
 from rest_framework_jwt.views import refresh_jwt_token
 
-from .views import AssignmentViewSet, MeetingViewSet, UserViewSet, CohortViewSet
+from .views import AssignmentViewSet, MeetingViewSet, SubmissionViewSet, UserViewSet
 
 router = routers.DefaultRouter()
-router.register(r'assignments', AssignmentViewSet)
-router.register(r'meetings', MeetingViewSet)
+router.register(r'assignments', AssignmentViewSet, basename='Assignment')
+router.register(r'meetings', MeetingViewSet, basename='Meeting')
+router.register(r'submissions', SubmissionViewSet, basename='Submission')
 router.register(r'user', UserViewSet)
-router.register(r'cohorts', CohortViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),

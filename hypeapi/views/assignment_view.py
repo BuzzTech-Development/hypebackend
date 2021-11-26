@@ -1,15 +1,14 @@
-from rest_framework import status, viewsets
-from rest_framework.response import Response
+from django.db.models import Q
+
+from rest_framework import viewsets
 
 from ..models import Assignment
 from ..serializers import AssignmentSerializer
 
 
 class AssignmentViewSet(viewsets.ModelViewSet):
-    queryset = Assignment.objects.all()
     serializer_class = AssignmentSerializer
 
-    def list(self, request, *args, **kwargs):
-        queryset = Assignment.objects.all()
-        serializer = AssignmentSerializer(queryset, many=True)
-        return Response(serializer.data)
+    def get_queryset(self):
+        user_cohorts = self.request.user.profile.cohorts.all()
+        return Assignment.objects.filter(cohort__in=user_cohorts)
