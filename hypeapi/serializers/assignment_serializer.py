@@ -7,10 +7,11 @@ class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assignment
         fields = (
+            'id',
             'badge',
-            'creation_date_time',
+            'creation_date',
             'description',
-            'due_date_time',
+            'due_date',
             'name',
             'num_files',
             'points'
