@@ -1,10 +1,11 @@
 from rest_framework import serializers
 
-from ..models import Assignment, Submission
+from ..models import Assignment
+from .submission_serializer import SubmissionSerializer
 
 
 class AssignmentSerializer(serializers.ModelSerializer):
-    submissions = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    submissions = SubmissionSerializer(many=True, read_only=True)
 
     class Meta:
         model = Assignment
