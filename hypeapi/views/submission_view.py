@@ -1,7 +1,7 @@
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 
-from ..models import Submission
+from ..models import Assignment, Submission
 from ..serializers import SubmissionSerializer, UploadSerializer
 
 
@@ -11,6 +11,12 @@ class SubmissionViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         instance_data = request.data
         data = {key: value for key, value in instance_data.items()}
+        author = Assignment.objects.get(id=data['assignment']).author
+
+        if 'points' in data and request.user is not author:
+            return Response('Points can only be updated by assignment author.',
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         instance = serializer.save(author=self.request.user)
@@ -28,4 +34,7 @@ class SubmissionViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def get_queryset(self):
-        return Submission.objects.filter(author=self.request.user)
+        if self.request.user.profile.role == 'INSTRUCTOR':
+            return Submission.objects.all()
+        else:
+            return Submission.objects.filter(author=self.request.user)

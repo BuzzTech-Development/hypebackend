@@ -1,9 +1,10 @@
 from django.db import models
-from django.utils import timezone
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from . import Announcement
+from django.utils import timezone
+from django.contrib.auth.models import User
 
+from .announcement import Announcement
 from .cohort import Cohort
 
 
@@ -11,14 +12,23 @@ class Assignment(models.Model):
     '''
         Represents an assignment created by an instructor and given to a cohort.
     '''
-    badge = models.IntegerField(default=-1)
-    cohort = models.ForeignKey(Cohort, on_delete=models.CASCADE)
+
+    author = models.ForeignKey(
+        User,
+        related_name='assignments',
+        on_delete=models.CASCADE
+    )
+    badge = models.IntegerField(blank=True, null=True)
+    cohort = models.ForeignKey(
+        Cohort,
+        related_name='assignments',
+        on_delete=models.CASCADE)
     creation_date = models.DateTimeField(auto_now_add=True)
-    description = models.CharField(default='', max_length=1000)
+    description = models.CharField(max_length=1000, blank=True)
     due_date = models.DateTimeField(default=timezone.now)
-    file_extensions = models.JSONField(default=list)
-    name = models.CharField(default='', max_length=30)
-    points = models.IntegerField(default=0)
+    file_extensions = models.JSONField(blank=True, null=True)
+    name = models.CharField(max_length=50)
+    points = models.IntegerField()
 
     def __str__(self):
         return self.name

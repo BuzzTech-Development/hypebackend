@@ -149,14 +149,15 @@ STATIC_URL = '/static/'
 
 # Amazon S3 Connection
 #
-# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_STORAGE_BUCKET_NAME = 'hype-lms-assignments'
 AWS_S3_REGION_NAME = 'us-east-1'
 
 # Session management
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA' : datetime.timedelta(seconds=604800), # A week in seconds
-    'JWT_ALLOW_REFRESH' : True
+    # A week in seconds
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=604800),
+    'JWT_ALLOW_REFRESH': True
 }
