@@ -10,7 +10,7 @@ router.register(r'announcements', AnnouncementViewSet)
 router.register(r'assignments', AssignmentViewSet, basename='Assignment')
 router.register(r'meetings', MeetingViewSet, basename='Meeting')
 router.register(r'submissions', SubmissionViewSet, basename='Submission')
-router.register(r'user', UserViewSet)
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
