@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 from .announcement import Announcement
 from .cohort import Cohort
@@ -12,6 +13,11 @@ class Assignment(models.Model):
         Represents an assignment created by an instructor and given to a cohort.
     '''
 
+    author = models.ForeignKey(
+        User,
+        related_name='assignments',
+        on_delete=models.CASCADE
+    )
     badge = models.IntegerField(blank=True, null=True)
     cohort = models.ForeignKey(
         Cohort,
