@@ -15,13 +15,13 @@ class Assignment(models.Model):
 
     author = models.ForeignKey(
         User,
-        related_name='assignments',
-        on_delete=models.CASCADE
+        related_name='authors',
+        on_delete=models.CASCADE,
     )
     badge = models.IntegerField(blank=True, null=True)
     cohort = models.ForeignKey(
         Cohort,
-        related_name='assignments',
+        related_name='cohorts',
         on_delete=models.CASCADE)
     creation_date = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=1000, blank=True)
